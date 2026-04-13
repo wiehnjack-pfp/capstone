@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PFP</title>
+
+  <link rel="stylesheet" href="controller.css">
+  <link rel="stylesheet" href="https://use.typekit.net/cin0avb.css">
+</head>
+
+<body>
+
+  <div class="hero">
+    <div class="heroBrand">
+      <div class="logoWrap">
+        <img src="PFPLogoW.png" class="logo" alt="PFP logo">
+      </div>
+      <div class="heroText">
+        <div class="heroTitle">PFP</div>
+        <div class="heroSubtitle">Persona Controller</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="algoIndicator" id="algoIndicator">
+    <div class="algoDot"></div>
+    <span>Algorithm Processing</span>
+  </div>
+
+  <div class="cta">Choose a persona</div>
+
+  <div class="liveRoute">
+    <div class="routeLabel">ACTIVE FEED ROUTE</div>
+    <div class="routeValue" id="routeValue">NONE</div>
+  </div>
+
+  <div class="viewToggle">
+    <button class="viewBtn active" id="view_profile" onclick="setView('profile')">Profile</button>
+    <button class="viewBtn" id="view_feed" onclick="setView('feed')">Feed</button>
+    <button class="viewBtn" id="view_activity" onclick="setView('activity')">Activity</button>
+  </div>
+
+  <div class="card">
+    <div class="sectionTitle">Persona Selector</div>
+
+    <div class="grid">
+      <button class="pbtn alpha" id="btn_alpha" onclick="setActive('alpha'); send('persona/genalpha')">
+        <div class="pbtnContent">
+          <img src="Aiden.jpg" class="pbtnAvatar" alt="Aiden persona">
+          <div class="pbtnText">
+            <span class="pbtnName">AIDEN</span>
+            <span class="pbtnGen">GEN ALPHA</span>
+          </div>
+        </div>
+      </button>
+
+      <button class="pbtn genz" id="btn_genz" onclick="setActive('genz'); send('persona/genz')">
+        <div class="pbtnContent">
+          <img src="Maya.jpg" class="pbtnAvatar" alt="Maya persona">
+          <div class="pbtnText">
+            <span class="pbtnName">MAYA</span>
+            <span class="pbtnGen">GEN Z</span>
+          </div>
+        </div>
+      </button>
+
+      <button class="pbtn mill" id="btn_mill" onclick="setActive('mill'); send('persona/millennial')">
+        <div class="pbtnContent">
+          <img src="Alex.jpg" class="pbtnAvatar" alt="Alex persona">
+          <div class="pbtnText">
+            <span class="pbtnName">ALEX</span>
+            <span class="pbtnGen">MILLENNIAL</span>
+          </div>
+        </div>
+      </button>
+
+      <button class="pbtn genx" id="btn_genx" onclick="setActive('genx'); send('persona/genx')">
+        <div class="pbtnContent">
+          <img src="Susan.jpg" class="pbtnAvatar" alt="Susan persona">
+          <div class="pbtnText">
+            <span class="pbtnName">SUSAN</span>
+            <span class="pbtnGen">GEN X</span>
+          </div>
+        </div>
+      </button>
+
+      <button class="pbtn boom" id="btn_boom" onclick="setActive('boom'); send('persona/boomer')">
+        <div class="pbtnContent">
+          <img src="Robert.jpg" class="pbtnAvatar" alt="Robert persona">
+          <div class="pbtnText">
+            <span class="pbtnName">ROBERT</span>
+            <span class="pbtnGen">BOOMER</span>
+          </div>
+        </div>
+      </button>
+
+      <button class="btn clearBtn" onclick="setActive(null); send('persona/default')">
+        RESET
+      </button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="sectionTitle">Experience</div>
+
+    <div class="split split-3">
+      <button class="btn" onclick="goHome()">HOME</button>
+      <button class="btn btnPrimary" onclick="send('start')">GO LIVE</button>
+      <button class="btn btnDanger" onclick="send('reset')">HARD RESET</button>
+    </div>
+  </div>
+
+  <div class="connector">
+    <div class="connectorCollapsed" onclick="toggleConnector()">
+      <div class="dot" id="statusDot"></div>
+      <span id="statusText" class="statusText">OFFLINE</span>
+    </div>
+
+    <div class="connectorExpanded" id="connectorPanel">
+      <div class="connectorHeader">
+        <span>System Connection</span>
+        <span class="connectorClose" onclick="toggleConnector()">Close</span>
+      </div>
+
+      <input class="connectorInput" id="ip" placeholder="PC IP (192.168.x.x)" />
+      <button class="connectorBtn" onclick="ping()">CONNECT</button>
+    </div>
+  </div>
+
+  <script src="controller.js"></script>
+</body>
+</html>
